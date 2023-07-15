@@ -1,0 +1,25 @@
+package Q5;
+
+public class CommissionEmployee extends Employee {
+    private double commisionPercentage;
+    private double totalSales;
+
+    public CommissionEmployee(int id, String name,double commisionPercentage, double totalSales) {
+        super(id,name);
+        this.commisionPercentage = commisionPercentage;
+        this.totalSales = totalSales;
+    }
+
+    @Override
+    public double getPayment() {
+        return totalSales*commisionPercentage/100;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ "CommissionEmployee{" +
+                "commisionPercentage=" + commisionPercentage +
+                ", totalSales=" + totalSales +
+                '}';
+    }
+}
